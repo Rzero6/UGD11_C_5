@@ -5,6 +5,13 @@
 
 package ugd11_c_5;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Nama : Reynold Kunarto 
  * NPM : 210711015
@@ -34,10 +41,34 @@ public class CustomerService extends Pegawai implements IBukaRekening{
         System.out.println("Akhir Kontrak : "+tanggalAkhir);
         System.out.println("Fasilitas : "+fasilitas);
         System.out.println("Jumlah Keluhan : "+jumlahKeluhan);
+        System.out.println("Tugas: ");
         BukaRekening();
+        try {
+            System.out.println("Durasi Kontrak "+cekDurasi()+"hari");
+            cekBonus();
+        } catch (ParseException ex) {
+            System.out.println("Error Durasi");;
+        }
     }
     
     public void BukaRekening(){
         System.out.println("Tugas Anda Adalah Membuka Rekening Baru");
+    }
+    
+    public void cekBonus() throws ParseException{
+        if(cekDurasi()>=0){
+            System.out.println("Anda mendapatkan bonus");
+            System.out.println("Bonus: "+(13000.0*cekDurasi()));
+        }else{
+            System.out.println("Anda tidak mendapatkan bonus");
+        }
+    }
+    
+    public double cekDurasi() throws ParseException{
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date awal = sdf.parse(tanggalAwal);
+        Date akhir = sdf.parse(tanggalAkhir);
+        long dif = Math.abs(akhir.getTime() - awal.getTime());
+        return (double) TimeUnit.DAYS.convert(dif,TimeUnit.MILLISECONDS);
     }
 }

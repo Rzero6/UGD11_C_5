@@ -43,9 +43,10 @@ public class Teller extends Pegawai implements ITransaksiKeuangan {
         System.out.println("Tugas: ");
         TransaksiKeuangan();
         try {
+            System.out.println("Durasi Kontrak "+cekDurasi()+"hari");
             cekBonus();
         } catch (ParseException ex) {
-            System.out.println("Error Bonus");;
+            System.out.println("Error Durasi");;
         }
     }
     

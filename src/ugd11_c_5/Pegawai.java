@@ -5,6 +5,8 @@
 
 package ugd11_c_5;
 
+import java.text.ParseException;
+
 /**
  * Nama : Reynold Kunarto 
  * NPM : 210711015
@@ -30,4 +32,6 @@ public abstract class Pegawai {
     }
     
     public abstract void showPegawai();
+    public abstract void cekBonus()throws ParseException;
+    public abstract double cekDurasi()throws ParseException;
 }
