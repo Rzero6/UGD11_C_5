@@ -40,7 +40,7 @@ public class Bangunan {
         
         for(int i=0; i<listpegawai.size(); i++){
             System.out.println("Petugas ke-"+(i+1));
-            //show pegawai
+            listpegawai.get(i).showPegawai();
         }
     }
 

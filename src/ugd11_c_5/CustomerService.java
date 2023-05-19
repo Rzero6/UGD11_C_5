@@ -16,34 +16,28 @@ package ugd11_c_5;
  *
  * @author Msi Modern 14
  */
-public class AccountOfficer extends Pegawai implements IMencariNasabah, IBukaRekening{
-    private int jumlahNasabah;
-    private String area;
+public class CustomerService extends Pegawai implements IBukaRekening{
+    private String fasilitas;
+    private int jumlahKeluhan;
 
-    public AccountOfficer(int jumlahNasabah, String area, String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir) {
+    public CustomerService(String fasilitas, int jumlahKeluhan, String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir) {
         super(nama, nomorIdentitas, tanggalAwal, tanggalAkhir);
-        this.jumlahNasabah = jumlahNasabah;
-        this.area = area;
+        this.fasilitas = fasilitas;
+        this.jumlahKeluhan = jumlahKeluhan;
     }
     
     public void showPegawai(){
-        System.out.println("\t==Data Account Officer==");
+        System.out.println("\t==Data Customer Service==");
         System.out.println("Nama Petugas : "+nama);
         System.out.println("Nomor Identitas : "+nomorIdentitas);
         System.out.println("Awal Kontrak : "+tanggalAwal);
         System.out.println("Akhir Kontrak : "+tanggalAkhir);
-        System.out.println("Jumlah Nasabah : "+jumlahNasabah);
-        System.out.println("Area : "+area);
+        System.out.println("Fasilitas : "+fasilitas);
+        System.out.println("Jumlah Keluhan : "+jumlahKeluhan);
         BukaRekening();
-        MencariNasabah();
     }
     
     public void BukaRekening(){
         System.out.println("Tugas Anda Adalah Membuka Rekening Baru");
     }
-    
-    public void MencariNasabah(){
-        System.out.println("Tugas Anda Adalah Mencari Nasabah Baru");
-    }
-    
 }
