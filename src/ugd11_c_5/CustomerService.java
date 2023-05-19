@@ -27,7 +27,7 @@ public class CustomerService extends Pegawai implements IBukaRekening{
     private String fasilitas;
     private int jumlahKeluhan;
 
-    public CustomerService(String fasilitas, int jumlahKeluhan, String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir) {
+    public CustomerService(String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir,String fasilitas, int jumlahKeluhan) {
         super(nama, nomorIdentitas, tanggalAwal, tanggalAkhir);
         this.fasilitas = fasilitas;
         this.jumlahKeluhan = jumlahKeluhan;
@@ -44,7 +44,7 @@ public class CustomerService extends Pegawai implements IBukaRekening{
         System.out.println("Tugas: ");
         BukaRekening();
         try {
-            System.out.println("Durasi Kontrak "+cekDurasi()+"hari");
+            System.out.println("Durasi Kontrak "+cekDurasi()+" hari");
             cekBonus();
         } catch (ParseException ex) {
             System.out.println("Error Durasi");;
@@ -58,7 +58,7 @@ public class CustomerService extends Pegawai implements IBukaRekening{
     public void cekBonus() throws ParseException{
         if(cekDurasi()>=0){
             System.out.println("Anda mendapatkan bonus");
-            System.out.println("Bonus: "+(13000.0*cekDurasi()));
+            System.out.println("Bonus: "+(15000.0*cekDurasi()));
         }else{
             System.out.println("Anda tidak mendapatkan bonus");
         }

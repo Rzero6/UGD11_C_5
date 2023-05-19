@@ -25,7 +25,7 @@ public class AccountOfficer extends Pegawai implements IMencariNasabah, IBukaRek
     private int jumlahNasabah;
     private String area;
 
-    public AccountOfficer(int jumlahNasabah, String area, String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir) {
+    public AccountOfficer(String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir,int jumlahNasabah, String area) {
         super(nama, nomorIdentitas, tanggalAwal, tanggalAkhir);
         this.jumlahNasabah = jumlahNasabah;
         this.area = area;
@@ -43,7 +43,7 @@ public class AccountOfficer extends Pegawai implements IMencariNasabah, IBukaRek
         BukaRekening();
         MencariNasabah();
         try {
-            System.out.println("Durasi Kontrak "+cekDurasi()+"hari");
+            System.out.println("Durasi Kontrak "+cekDurasi()+" hari");
             cekBonus();
         } catch (ParseException ex) {
             System.out.println("Error Durasi");;
@@ -60,7 +60,7 @@ public class AccountOfficer extends Pegawai implements IMencariNasabah, IBukaRek
     public void cekBonus() throws ParseException{
         if(cekDurasi()>=0){
             System.out.println("Anda mendapatkan bonus");
-            System.out.println("Bonus: "+(13000.0*cekDurasi()));
+            System.out.println("Bonus: "+(12000.0*cekDurasi()));
         }else{
             System.out.println("Anda tidak mendapatkan bonus");
         }

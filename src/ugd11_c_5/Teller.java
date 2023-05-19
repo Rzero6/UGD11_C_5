@@ -28,7 +28,7 @@ public class Teller extends Pegawai implements ITransaksiKeuangan {
     private int tunjangan;
     private int jumlahUangMasuk;
 
-    public Teller(int tunjangan, int jumlahUangMasuk, String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir) {
+    public Teller(String nama, String nomorIdentitas, String tanggalAwal, String tanggalAkhir,int tunjangan, int jumlahUangMasuk) {
         super(nama, nomorIdentitas, tanggalAwal, tanggalAkhir);
         this.tunjangan = tunjangan;
         this.jumlahUangMasuk = jumlahUangMasuk;
@@ -43,7 +43,7 @@ public class Teller extends Pegawai implements ITransaksiKeuangan {
         System.out.println("Tugas: ");
         TransaksiKeuangan();
         try {
-            System.out.println("Durasi Kontrak "+cekDurasi()+"hari");
+            System.out.println("Durasi Kontrak "+cekDurasi()+" hari");
             cekBonus();
         } catch (ParseException ex) {
             System.out.println("Error Durasi");;
