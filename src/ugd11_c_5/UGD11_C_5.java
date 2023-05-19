@@ -26,7 +26,8 @@ public class UGD11_C_5 {
     public static void main(String[] args) {
         //Scanner scan = new Scanner (System.in);
         // TODO code application logic here
-        Bangunan b = new Bangunan("Bank Rakyat","Demangan 10","Kantor Rakyat","Rudy","S1");
+        Bank b = new Bank("Bank Rakyat","Demangan 10");
+        Kantor k = new Kantor("Rudy", "S1", "Kantor Rakyat");
         AccountOfficer P1 = new AccountOfficer("Siti","01012023","01/01/2023","25/01/2023",10,"Jogja");
         b.addPegawai(P1);
 
@@ -36,8 +37,9 @@ public class UGD11_C_5 {
         CustomerService P3 = new CustomerService("Oline","03032023","01/01/2023","01/02/2023","Mobil",5);
         b.addPegawai(P3);
 
-        b.showBank();
-        b.showKantor();
+        b.showBangunan();
+        System.out.println("\n");
+        k.showBangunan();
     }
 
 }
